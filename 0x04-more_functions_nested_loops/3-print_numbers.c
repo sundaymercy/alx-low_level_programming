@@ -18,10 +18,3 @@ void print_numbers(void)
 	_putchar('\n');
 }
 
-===============================================================
-4-print_most_numbers.c
-________________________
-/*
- * File: 4-print_most_numbers.c
- * Auth:Sunday Taiwo mercy
- */
