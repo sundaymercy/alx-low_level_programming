@@ -1,20 +1,29 @@
-/*
- * File: 3-print_numbers.c
- * Auth: Sunday Taiwo mercy
- */
+#include "main.h"
 
-#include "holberton.h"
+
 
 /**
- * print_numbers - Prints the numbers from 0-9.
+
+ * _islower - Checks if a character is lowercase.
+
+ * @c: The character to be checked.
+
+ *
+
+ * Return: 1 if character is lowercase, 0 otherwise.
+
  */
-void print_numbers(void)
+
+int _islower(int c)
+
 {
-	int num;
 
-	for (num = 0; num <= 9; num++)
-		_putchar((num % 10) + '0');
+	if (c >= 'a' && c <= 'z')
 
-	_putchar('\n');
+		return (1);
+
+	else
+
+		return (0);
+
 }
-
