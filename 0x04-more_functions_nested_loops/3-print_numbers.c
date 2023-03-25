@@ -1,6 +1,6 @@
 /*
  * File: 3-print_numbers.c
- * Auth: Ameh Jacob E
+ * Auth: Sunday Taiwo mercy
  */
 
 #include "holberton.h"
