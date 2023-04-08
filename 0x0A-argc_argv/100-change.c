@@ -3,50 +3,34 @@
 #include <stdlib.h>
 
 /**
- * main - print the minimum  number of coins to make change for an amount of money
- * @argc: argument count
- * @argv: argument vector, array of strings
- * Return: 1 if error, 0 otherwise
+ * main - print the min num of coins to make change for amount of money
+* @argc: int: argument count
+ * @argv: string: argument vector
+ * Return: int: 0 on success, 1 on failure
  */
 
 int main(int argc, char *argv[])
 {
-	int total, count;
-	unsigned int i;
-	char *p;
-	int cents[] = {25, 10, 5, 2};
+	int i, n, s, ch = 0;
+	int c[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	total = strtol(argv[1], &p, 10);
-	count = 0;
-
-	if (!*p)
-	{
-		while (total > 1)
-		{
-			for (i = 0; i < sizeof(cents[i]); i++)
-			{
-				if (total >= cents[i])
-				{
-					count += total / cents[i];
-					total = total % cents[i];
-				}
-			}
-		}
-		if (total == 1)
-			count++;
-	}
+	s = atoi(argv[1]);
+	if (s < 1)
+		printf("0\n");
 	else
 	{
-		printf("Error\n");
-		return (1);
+		for (i = 0; i < 5 && s; i++)
+		{
+			n = s / c[i];
+			ch += n;
+			s -= n * c[i];
+		}
+		printf("%d\n", ch);
 	}
-
-	printf("%d\n", count);
 	return (0);
 }
