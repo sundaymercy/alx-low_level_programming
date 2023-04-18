@@ -1,18 +1,14 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
-
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * free_dog - Freeing a pointer to a struct
+ * @d: Pointer to a struct
  */
-int main(void)
+void free_dog(dog_t *d)
 {
-dog_t my_dog;
-
-my_dog.name = "bingolee";
-my_dog.age = 3.5;
-my_dog.owner = "mercy";
-printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
-return (0);
+	if (d == NULL)
+		return;
+	free(d->name);
+	free(d->owner);
+	free(d);
 }
