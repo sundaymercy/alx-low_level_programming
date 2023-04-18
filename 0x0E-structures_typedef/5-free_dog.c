@@ -1,17 +1,3 @@
-#include <stdlib.h>
-#include "dog.h"
-/**
- * free_dog - Freeing a pointer to a struct
- * @d: Pointer to a struct
- */
-void free_dog(dog_t *d)
-{
-	if (d == NULL)
-		return;
-	free(d->name);
-	free(d->owner);
-	free(d);
-}
 #include <stdio.h>
 #include "dog.h"
 
@@ -22,11 +8,11 @@ void free_dog(dog_t *d)
  */
 int main(void)
 {
-    dog_t my_dog;
+dog_t my_dog;
 
-    my_dog.name = "Django";
-    my_dog.age = 3.5;
-    my_dog.owner = "Jay";
-    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
-    return (0);
+my_dog.name = "bingolee";
+my_dog.age = 3.5;
+my_dog.owner = "mercy";
+printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
+return (0);
 }
