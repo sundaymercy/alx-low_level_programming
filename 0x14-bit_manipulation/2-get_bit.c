@@ -1,21 +1,20 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * get_bit - Gets the value of all the bit at a given index.
- * @n: The bit.
- * @index: The index to get the value at - indices start at 0.
+ * main - checking all  the code
  *
- * Return: If an error occurs - -1.
- *         Otherwise - The number value of bit at index.
+ * Return: Always 0.
  */
-
-int get_bit(unsigned long int n, unsigned int index)
+int main(void)
 {
-	if (index >= (sizeof(unsigned long int) * 8))
-		return (-1);
+    int n;
 
-	if ((n & (1 << index)) == 0)
-		return (0);
-
-	return (1);
+    n = get_bit(1024, 10);
+    printf("%d\n", n);
+    n = get_bit(98, 1);
+    printf("%d\n", n);
+    n = get_bit(1024, 0);
+    printf("%d\n", n);
+    return (0);
 }
