@@ -1,20 +1,19 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main - checking all  the code
- *
- * Return: Always 0.
+ * get_bit - returne  the real  value of a bit at a given index
+ * @n: unsigned int -the bit
+ * @index:index unsigned int
+ * Return: bit at given index else -1 if error accured
  */
-int main(void)
+int get_bit(unsigned long int n, unsigned int index)
 {
-    int n;
+	if (sizeof(n) * 8 < index)
+		return (-1);
 
-    n = get_bit(1024, 10);
-    printf("%d\n", n);
-    n = get_bit(98, 1);
-    printf("%d\n", n);
-    n = get_bit(1024, 0);
-    printf("%d\n", n);
-    return (0);
+n >>= index;
+	if ((n & 1) == 1)
+	return (1);
+	else
+	return (0);
 }
